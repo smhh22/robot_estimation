@@ -21,8 +21,24 @@ def generate_launch_description():
         output='screen',
         parameters=[{'use_sim_time': True}]
     )
+    controller_motion_model_node = Node(
+        package='robot_estimation',
+        executable='controller_motion_model',
+        name='controller_motion_model',
+        output='screen',
+        parameters=[{'use_sim_time': True}]
+    )
+    odom_estimator_node = Node(
+        package='robot_estimation',
+        executable='odom_estimator',
+        name='odom_estimator',
+        output='screen',
+        parameters=[{'use_sim_time': True}]
+    )
     
     return LaunchDescription([
         bias_calculator_node,
         low_pass_filter_node,
+        controller_motion_model_node,
+        odom_estimator_node,
     ])

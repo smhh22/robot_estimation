@@ -29,6 +29,8 @@ setup(
         'console_scripts': [
             'low_pass_filter = robot_estimation.low_pass_filter:main',
             'bias_calculator = robot_estimation.bias_calculator:main',
+            'controller_motion_model = robot_estimation.controller_motion_model:main',
+            'odom_estimator = robot_estimation.odom_estimator:main',
         ],
     },
 )
